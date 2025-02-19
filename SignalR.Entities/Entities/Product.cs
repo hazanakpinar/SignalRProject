@@ -9,5 +9,9 @@
         public  string Image { get; set; }
         public bool Status { get; set; }
 
+        //rm np
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
     }
 }

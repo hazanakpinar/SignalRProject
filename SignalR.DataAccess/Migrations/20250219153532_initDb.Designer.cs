@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SignalR.DataAccess.Concrete;
 
@@ -11,9 +12,11 @@ using SignalR.DataAccess.Concrete;
 namespace SignalR.DataAccess.Migrations
 {
     [DbContext(typeof(SignalRDbContext))]
-    partial class SignalRDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250219153532_initDb")]
+    partial class initDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -201,9 +204,6 @@ namespace SignalR.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -223,8 +223,6 @@ namespace SignalR.DataAccess.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -284,22 +282,6 @@ namespace SignalR.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Testimonials");
-                });
-
-            modelBuilder.Entity("SignalR.Entities.Entities.Product", b =>
-                {
-                    b.HasOne("SignalR.Entities.Entities.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("SignalR.Entities.Entities.Category", b =>
-                {
-                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

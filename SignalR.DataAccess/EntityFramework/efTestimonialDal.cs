@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace SignalR.DataAccess.EntityFramework
 {
-    public class efTestimonyDal : GenericRepository<Testimonial>, ITestimonialDal
+    public class efTestimonialDal : GenericRepository<Testimonial>, ITestimonialDal
     {
-        public efTestimonyDal(SignalRDbContext context) : base(context)
+        public efTestimonialDal(SignalRDbContext context) : base(context)
         {
         }
     }

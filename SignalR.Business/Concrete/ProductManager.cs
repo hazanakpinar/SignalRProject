@@ -36,5 +36,10 @@ namespace SignalR.Business.Concrete
         {
             _productDal.Update(entity);
         }
+
+        public List<Product> TGetProductWithCategories()
+        {
+            return _productDal.GetProductWithCategories();
+        }
     }
 }
