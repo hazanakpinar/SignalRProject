@@ -44,7 +44,7 @@ namespace SignalR.API.Controllers
             _discountService.TDelete(value);
             return Ok("İndirim Silindi");
         }
-        [HttpGet]
+        [HttpGet("GetDiscount")]
         public IActionResult GetDiscount(int id)
         {
             var value = _discountService.TGetByID(id);

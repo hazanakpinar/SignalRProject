@@ -52,7 +52,7 @@ namespace SignalR.API.Controllers
             _productService.TDelete(value);
             return Ok("Ürün Silindi");
         }
-        [HttpGet]
+        [HttpGet("GetProduct")]
         public IActionResult GetProduct(int id)
         {
             var value = _productService.TGetByID(id);

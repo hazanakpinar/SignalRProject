@@ -45,7 +45,7 @@ namespace SignalR.API.Controllers
             _infoService.TDelete(value);
             return Ok("İletişim Bilgisi Silindi");
         }
-        [HttpGet]
+        [HttpGet("GetInfo")]
         public IActionResult GetInfo(int id)
         {
             var value = _infoService.TGetByID(id);

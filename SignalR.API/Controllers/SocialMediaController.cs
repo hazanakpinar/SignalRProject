@@ -43,7 +43,7 @@ namespace SignalR.API.Controllers
             _socialMediaService.TDelete(value);
             return Ok("Sosyal Medya Bilgisi Silindi");
         }
-        [HttpGet]
+        [HttpGet("GetSocialMedia")]
         public IActionResult GetSocialMedia(int id)
         {
             var value = _socialMediaService.TGetByID(id);

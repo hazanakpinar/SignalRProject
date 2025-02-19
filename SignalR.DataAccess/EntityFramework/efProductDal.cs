@@ -20,7 +20,7 @@ namespace SignalR.DataAccess.EntityFramework
         public List<Product> GetProductWithCategories()
         {
             var context = new SignalRDbContext();
-            var values = context.Products.Include(x => x.Category).ToList();
+            var values = context.Products.Include(x => x.Category.Name).ToList();
             return values;
         }
     }

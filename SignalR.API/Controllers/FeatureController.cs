@@ -47,7 +47,7 @@ namespace SignalR.API.Controllers
             _featureService.TDelete(value);
             return Ok("Öne Çıkan Alan Silindi");
         }
-        [HttpGet]
+        [HttpGet("GetFeature")]
         public IActionResult GetFeature(int id)
         {
             var value = _featureService.TGetByID(id);
