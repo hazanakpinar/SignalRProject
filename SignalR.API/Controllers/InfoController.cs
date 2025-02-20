@@ -38,14 +38,14 @@ namespace SignalR.API.Controllers
             });
             return Ok("İletişim Bilgisi Eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteInfo(int id)
         {
             var value = _infoService.TGetByID(id);
             _infoService.TDelete(value);
             return Ok("İletişim Bilgisi Silindi");
         }
-        [HttpGet("GetInfo")]
+        [HttpGet("{id}")]
         public IActionResult GetInfo(int id)
         {
             var value = _infoService.TGetByID(id);

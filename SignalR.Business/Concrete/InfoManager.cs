@@ -12,6 +12,12 @@ namespace SignalR.Business.Concrete
     public class InfoManager : IInfoService
     {
         private readonly IInfoDal _infoDal;
+
+        public InfoManager(IInfoDal infoDal)
+        {
+            _infoDal = infoDal;
+        }
+
         public void TAdd(Info entity)
         {
             _infoDal.Add(entity);
