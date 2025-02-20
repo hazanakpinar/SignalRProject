@@ -37,7 +37,7 @@ namespace SignalR.API.Controllers
             _bookingService.TAdd(booking);
             return Ok("Başarıyla Eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteBooking(int id)
         {
             var value = _bookingService.TGetByID(id);
@@ -59,7 +59,7 @@ namespace SignalR.API.Controllers
             _bookingService.TUpdate(booking);
             return Ok("Güncellendi");
         }
-        [HttpGet("GetBooking")]
+        [HttpGet("{id}")]
         public IActionResult GetBooking(int id)
         {
             var value = _bookingService.TGetByID(id);

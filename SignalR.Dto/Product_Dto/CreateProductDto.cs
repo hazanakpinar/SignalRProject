@@ -13,5 +13,7 @@ namespace SignalR.Dto.Product_Dto
         public decimal Price { get; set; }
         public string Image { get; set; }
         public bool Status { get; set; }
+        public int CategoryId { get; set; }
+
     }
 }

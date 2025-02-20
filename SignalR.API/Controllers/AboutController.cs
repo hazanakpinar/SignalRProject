@@ -34,7 +34,7 @@ namespace SignalR.API.Controllers
             _aboutService.TAdd(about);
             return Ok("Başarıyla Eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteAbout(int id) 
         {
             var value = _aboutService.TGetByID (id);
@@ -53,7 +53,7 @@ namespace SignalR.API.Controllers
             _aboutService.TUpdate (about);
             return Ok("Güncellendi");
         }
-        [HttpGet("GetAbout")]
+        [HttpGet("{id}")]
         public IActionResult GetAbout(int id)
         {
             var value = _aboutService.TGetByID (id);
