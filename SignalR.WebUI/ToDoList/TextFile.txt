@@ -1,0 +1,4 @@
+﻿---categorycount consume edicez
+product count 
+aktif kategori sayısı
+pasif '' '' 

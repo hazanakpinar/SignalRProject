@@ -23,5 +23,11 @@ namespace SignalR.DataAccess.EntityFramework
             var values = context.Products.Include(x => x.Category.Name).ToList();
             return values;
         }
+
+        public int ProductCount()
+        {
+            using var context = new SignalRDbContext();
+            return context.Products.Count();
+        }
     }
 }

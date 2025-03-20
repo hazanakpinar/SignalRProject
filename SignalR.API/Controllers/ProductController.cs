@@ -21,6 +21,11 @@ namespace SignalR.API.Controllers
             _mapper = mapper;
             _productService = ProductService;
         }
+        [HttpGet("ProductCount")]
+        public IActionResult ProductCount()
+        {
+            return Ok(_productService.TProductCount());
+        }
         [HttpGet]
         public IActionResult ProductList()
         {
