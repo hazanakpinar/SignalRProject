@@ -2,3 +2,18 @@
 product count 
 aktif kategori sayısı
 pasif '' '' 
+
+ürün adına göre işlem gerçekleştirme linq sorgusu olarak kategori adına göre ürün sayısı 1ve 2 
+son eklenen kategori
+
+ortalama fiyat 
+en yüksek
+en düşük
+ortalama hamburger fiyatı
+
+toplam sipariş sayısı 
+aktif sipariş sayısı
+son sipariş tuarı
+kasadaki tutar
+bugünkü kazanç
+masa sayısı

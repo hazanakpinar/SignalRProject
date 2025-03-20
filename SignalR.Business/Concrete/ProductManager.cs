@@ -52,5 +52,30 @@ namespace SignalR.Business.Concrete
         {
             return _productDal.ProductCount();
         }
+
+        public int TProductCountByCategoryNameHamburger()
+        {
+            return _productDal.ProductCountByCategoryNameHamburger();
+        }
+
+        public int TProductCountByCategoryNameDrink()
+        {
+            return _productDal.ProductCountByCategoryNameDrink();
+        }
+
+        public decimal TProductPriceAvg()
+        {
+            return _productDal.ProductPriceAvg();
+        }
+
+        public string TProductNameByMaxPrice()
+        {
+            return _productDal.ProductNameByMaxPrice();
+        }
+
+        public string TProductNameByMinPrice()
+        {
+            return _productDal.ProductNameByMinPrice();
+        }
     }
 }

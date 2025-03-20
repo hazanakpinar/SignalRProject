@@ -11,5 +11,10 @@ namespace SignalR.Business.Abstract
     {
         List<Product> TGetProductWithCategories();
         int TProductCount();
+        int TProductCountByCategoryNameHamburger();
+        int TProductCountByCategoryNameDrink();
+        decimal TProductPriceAvg();
+        string TProductNameByMaxPrice();
+        string TProductNameByMinPrice();
     }
 }
