@@ -77,5 +77,10 @@ namespace SignalR.Business.Concrete
         {
             return _productDal.ProductNameByMinPrice();
         }
+
+        public decimal TProductAvgPriceByHamburger()
+        {
+            return _productDal.ProductAvgPriceByHamburger();
+        }
     }
 }

@@ -50,6 +50,12 @@ builder.Services.AddScoped<ISocialMediaDal, efSocialMediaDal>();
 //Testimonial
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<ITestimonialDal, efTestimonialDal>();
+//order
+builder.Services.AddScoped<IOrderService, OrderManager>();
+builder.Services.AddScoped<IOrderDal, efOrderDal>();
+//order
+builder.Services.AddScoped<IOrderDetailService, OrderDetailManager>();
+builder.Services.AddScoped<IOrderDetailDal, efOrderDetailDal>();
 
 
 builder.Services.AddControllers();
