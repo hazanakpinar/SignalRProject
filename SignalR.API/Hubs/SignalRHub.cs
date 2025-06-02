@@ -8,10 +8,12 @@ namespace SignalR.API.Hubs
     {
         private readonly  ICategoryService _categoryService;
         private readonly IProductService _productService;
-        public SignalRHub(ICategoryService categoryService, IProductService productService)
+        private readonly IOrderService _orderService;
+        public SignalRHub(ICategoryService categoryService, IProductService productService, IOrderService orderService)
         {
             _categoryService = categoryService;
             _productService = productService;
+            _orderService = orderService;
         }
 
         //  SignalRDbContext context = new SignalRDbContext();
@@ -34,6 +36,24 @@ namespace SignalR.API.Hubs
 
             var value6 = _productService.TProductCountByCategoryNameDrink();
             await Clients.All.SendAsync("ReceiveProductCountByCategoryNameDrink",value6);
+           
+            var value7 = _productService.TProductPriceAvg();
+            await Clients.All.SendAsync("ReceiveProductPriceAvg", value7.ToString("0.00")+ "₺");
+
+            var value8 = _productService.TProductNameByMaxPrice();
+            await Clients.All.SendAsync("ReceiveProductNameByMaxPrice", value8);
+
+            var value9 = _productService.TProductNameByMinPrice();
+            await Clients.All.SendAsync("ReceiveProductNameByMinPrice", value9);
+
+            var value10 = _productService.TProductAvgPriceByHamburger();
+            await Clients.All.SendAsync("ReceiveProductAvgPriceByHamburger", value10.ToString("0.00") + "₺");
+
+            var value11 = _orderService.TTotalOrderCount();
+            await Clients.All.SendAsync("ReceiveTotalOrderCount", value11);
+            
+            var value12 = _orderService.TActiveOrderCount();
+            await Clients.All.SendAsync("ReceiveActiveOrderCount", value12);
         }
 
   
