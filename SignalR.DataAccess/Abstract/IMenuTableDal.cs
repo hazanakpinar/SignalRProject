@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SignalR.Entities.Entities;
 
 namespace SignalR.DataAccess.Abstract
 {
-    public interface  IMenuTableDal
+    public interface  IMenuTableDal : IGenericDal<MenuTable>
     {
+        int MenuTableCount();
     }
 }

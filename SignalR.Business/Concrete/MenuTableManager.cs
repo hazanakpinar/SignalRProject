@@ -1,11 +1,6 @@
 ﻿using SignalR.Business.Abstract;
 using SignalR.DataAccess.Abstract;
 using SignalR.Entities.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SignalR.Business.Concrete
 {
@@ -16,6 +11,11 @@ namespace SignalR.Business.Concrete
         public MenuTableManager(IMenuTableDal menuTableDal)
         {
             _menuTableDal = menuTableDal;
+        }
+
+        public int TMenuTableCount()
+        {
+           return _menuTableDal.MenuTableCount();
         }
 
         public void TAdd(MenuTable entity)
